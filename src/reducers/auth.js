@@ -5,6 +5,7 @@ import {
   AUTH_FAILED,
   LOGIN_SUCCESS,
   LOGIN_FAILED,
+  LOGOUT,
 } from "../actions/types";
 
 const initialState = {
@@ -28,6 +29,7 @@ export default (state = initialState, { type, payload }) => {
     case AUTH_FAILED:
     case REGISTER_FAILED:
     case LOGIN_FAILED:
+    case LOGOUT:
       localStorage.removeItem("token");
       return {
         ...state,
